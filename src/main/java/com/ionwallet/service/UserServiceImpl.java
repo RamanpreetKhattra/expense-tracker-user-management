@@ -14,10 +14,17 @@ public class UserServiceImpl implements UserService{
 	UserRepository userRepository;
 	
 	@Override
-	public void save(UsersDTO usersDTO) {
+	public boolean save(UsersDTO usersDTO) {
 		Users users=new Users();
 		users.setFirstName(usersDTO.getFirstName());
+		users.setLastName(usersDTO.getLastName());
+		users.setDob(usersDTO.getDob());
+		users.setEmail(usersDTO.getEmail());
+		users.setPhone(usersDTO.getPhone());
+		users.setStatus(usersDTO.getStatus());
+		
 		userRepository.save(users);
+		return true;
 		
 	}
 

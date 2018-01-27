@@ -2,6 +2,8 @@ package com.ionwallet.dto;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 public class UsersDTO {
 	
@@ -11,6 +13,7 @@ public class UsersDTO {
 	
 	private String lastName;
 	
+	@JsonFormat(pattern = "dd-MM-yyyy")
 	private LocalDateTime dob;
 	
 	private String email;
