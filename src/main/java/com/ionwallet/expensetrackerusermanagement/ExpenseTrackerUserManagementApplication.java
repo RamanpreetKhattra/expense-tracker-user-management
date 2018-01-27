@@ -7,7 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages={"com.ionwallet"})
-@EntityScan(basePackages={"com.ionwallet.domain"})
 public class ExpenseTrackerUserManagementApplication {
 
 	public static void main(String[] args) {

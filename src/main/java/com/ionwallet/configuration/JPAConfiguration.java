@@ -10,6 +10,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -17,8 +18,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 
 @Configuration
-@ConfigurationProperties("expenses")
-@EntityScan(basePackages={"com.ionwallet.domain"})
+@EnableJpaRepositories(basePackages={"com.ionwallet.repository"})
 public class JPAConfiguration {
 	    
 		@Autowired
@@ -48,7 +48,7 @@ public class JPAConfiguration {
 	    
 	    Properties additionalProperties() {
 	        Properties properties = new Properties();
-	        properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+	        properties.setProperty("hibernate.hbm2ddl.auto", "validate");
 	        properties.setProperty("hibernate.dialect", env.getProperty("spring.jpa.database-platform"));
 	        return properties;
 	     }
