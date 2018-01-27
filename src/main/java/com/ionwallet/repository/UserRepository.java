@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.ionwallet.domain.Users;
 
 @Repository
-public interface UserRepository extends JpaRepository<Integer, Users>{
+public interface UserRepository extends JpaRepository<Users, Integer>{
 
 }
