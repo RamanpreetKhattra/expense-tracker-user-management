@@ -15,7 +15,7 @@ import com.ionwallet.hibernate.jpa.utils.LocalDateTimeAttributeConverter;
 
 @Entity
 @Table(name="USERS")
-public class Users {
+public class Users extends AbstractEntity{
 
 	@Id
 	@Column(name="USER_ID")
