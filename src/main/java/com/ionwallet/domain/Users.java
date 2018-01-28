@@ -1,13 +1,20 @@
 package com.ionwallet.domain;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -43,7 +50,21 @@ public class Users extends AbstractEntity{
 	@Column(name="STATUS")
 	private String status;
 	
+	@ManyToMany(cascade={CascadeType.ALL})
+	@JoinTable(name="USER_ROLE_MAPPING",
+			   joinColumns={@JoinColumn(name="USER_ID")},
+			   inverseJoinColumns={@JoinColumn(name="ROLE_ID")}
+	)
+	private List<Roles> roles=new ArrayList<>();
 	
+	public List<Roles> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Roles> roles) {
+		this.roles = roles;
+	}
+
 	public int getUserId() {
 		return userId;
 	}

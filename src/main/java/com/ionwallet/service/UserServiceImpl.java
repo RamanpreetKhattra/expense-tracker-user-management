@@ -20,6 +20,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public UsersDTO save(UsersDTO usersDTO) {
 		Users users=mapper.convertToEntity(usersDTO);
+		//find role by rolename
 		users=userRepository.save(users);
 		usersDTO=mapper.covertToDto(users);
 		return usersDTO;
