@@ -4,5 +4,5 @@ import com.ionwallet.dto.UsersDTO;
 
 public interface UserService {
 
-	public boolean save(UsersDTO usersDTO);
+	public UsersDTO save(UsersDTO usersDTO);
 }

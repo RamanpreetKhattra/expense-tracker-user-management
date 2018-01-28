@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 
-public class UsersDTO {
+public class UsersDTO extends AbstractDTO {
 	
 	private int userId;
 	

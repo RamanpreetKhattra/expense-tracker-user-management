@@ -19,7 +19,7 @@ public class UserController {
 	UserService userService;
 	
 	@RequestMapping(value="/save",method=RequestMethod.POST)
-	public boolean saveUser(@RequestBody UsersDTO usersDTO){
+	public UsersDTO saveUser(@RequestBody UsersDTO usersDTO){
 		usersDTO.setDob(LocalDateTime.of(2000, 12, 12, 12, 12, 12));
 		return userService.save(usersDTO);
 	}
