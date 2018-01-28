@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ionwallet.domain.Users;
-import com.ionwallet.dto.UsersDTO;
+import com.ionwallet.expensemgrutility.common.dtos.UsersDTO;
 import com.ionwallet.mapper.UserToUserDtoMapper;
 import com.ionwallet.repository.UserRepository;
 

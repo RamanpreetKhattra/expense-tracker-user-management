@@ -1,6 +1,6 @@
 package com.ionwallet.service;
 
-import com.ionwallet.dto.UsersDTO;
+import com.ionwallet.expensemgrutility.common.dtos.UsersDTO;
 
 public interface UserService {
 

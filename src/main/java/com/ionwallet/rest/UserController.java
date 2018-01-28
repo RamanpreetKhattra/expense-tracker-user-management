@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ionwallet.dto.UsersDTO;
+import com.ionwallet.expensemgrutility.common.dtos.UsersDTO;
 import com.ionwallet.service.UserService;
 
 @RestController
