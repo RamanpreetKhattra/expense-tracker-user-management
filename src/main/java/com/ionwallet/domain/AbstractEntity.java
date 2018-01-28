@@ -15,7 +15,8 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.util.StringUtils;
 
-import com.ionwallet.hibernate.jpa.utils.LocalDateTimeAttributeConverter;
+import com.ionwallet.expensemgrutility.converters.LocalDateTimeAttributeConverter;
+
 
 
 @MappedSuperclass

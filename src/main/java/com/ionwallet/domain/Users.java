@@ -11,7 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import com.ionwallet.hibernate.jpa.utils.LocalDateTimeAttributeConverter;
+import com.ionwallet.expensemgrutility.converters.LocalDateTimeAttributeConverter;
+
 
 @Entity
 @Table(name="USERS")
