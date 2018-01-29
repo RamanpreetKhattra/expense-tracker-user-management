@@ -8,4 +8,5 @@ import com.ionwallet.domain.Roles;
 @Repository
 public interface RoleRepository extends JpaRepository<Roles, Integer>{
 
+	public Roles findByRoleName(String roleName);
 }

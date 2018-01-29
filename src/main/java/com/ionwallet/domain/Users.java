@@ -50,7 +50,7 @@ public class Users extends AbstractEntity{
 	@Column(name="STATUS")
 	private String status;
 	
-	@ManyToMany(cascade={CascadeType.ALL})
+	@ManyToMany(cascade={CascadeType.MERGE,CascadeType.REFRESH})
 	@JoinTable(name="USER_ROLE_MAPPING",
 			   joinColumns={@JoinColumn(name="USER_ID")},
 			   inverseJoinColumns={@JoinColumn(name="ROLE_ID")}
