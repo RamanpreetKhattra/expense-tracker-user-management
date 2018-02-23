@@ -50,6 +50,9 @@ public class Users extends AbstractEntity{
 	@Column(name="STATUS")
 	private String status;
 	
+	@Column(name="PASSWORD")
+	private String password;
+	
 	@ManyToMany(cascade={CascadeType.MERGE,CascadeType.REFRESH})
 	@JoinTable(name="USER_ROLE_MAPPING",
 			   joinColumns={@JoinColumn(name="USER_ID")},
@@ -67,6 +70,14 @@ public class Users extends AbstractEntity{
 
 	public int getUserId() {
 		return userId;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public void setUserId(int userId) {

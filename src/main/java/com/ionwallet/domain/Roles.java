@@ -25,20 +25,12 @@ public class Roles extends AbstractEntity {
 	@Column(name = "ROLE_NAME")
 	private String roleName;
 	
-	@ManyToMany(mappedBy="roles")
-	private List<Users> users=new ArrayList<>();
+	
 
 	public int getRoleId() {
 		return roleId;
 	}
 
-	public List<Users> getUsers() {
-		return users;
-	}
-
-	public void setUsers(List<Users> users) {
-		this.users = users;
-	}
 
 	public void setRoleId(int roleId) {
 		this.roleId = roleId;

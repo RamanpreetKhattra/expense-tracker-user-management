@@ -21,7 +21,7 @@ public class UserController {
 	
 	@RequestMapping(value="/save",method=RequestMethod.POST,produces=MediaType.APPLICATION_JSON_VALUE ,consumes=MediaType.APPLICATION_JSON_VALUE)
 	public UsersDTO saveUser(@RequestBody UsersDTO usersDTO){
-		usersDTO.setDob(LocalDateTime.of(2000, 12, 12, 12, 12, 12));
+//		usersDTO.setDob(LocalDateTime.of(2000, 12, 12, 12, 12, 12));
 		return userService.save(usersDTO);
 	}
 

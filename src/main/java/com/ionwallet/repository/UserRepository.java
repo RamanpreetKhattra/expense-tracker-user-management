@@ -8,4 +8,6 @@ import com.ionwallet.domain.Users;
 @Repository
 public interface UserRepository extends JpaRepository<Users, Integer>{
 
+	public Users findByEmail(String email);
+	
 }

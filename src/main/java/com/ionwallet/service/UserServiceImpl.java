@@ -14,30 +14,32 @@ import com.ionwallet.repository.RoleRepository;
 import com.ionwallet.repository.UserRepository;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
 	@Autowired
 	UserRepository userRepository;
-	
+
 	@Autowired
 	RoleRepository roleRepository;
-	
+
 	@Autowired
 	UserToUserDtoMapper mapper;
-	
+
 	@Override
 	public UsersDTO save(UsersDTO usersDTO) {
-		Users users=mapper.convertToEntity(usersDTO);
-		List<Roles> roles=new ArrayList<Roles>();
-		for(Roles role: users.getRoles()){
-			role=roleRepository.findByRoleName(role.getRoleName());
+		Users users = mapper.convertToEntity(usersDTO);
+		List<Roles> roles = new ArrayList<Roles>();
+		for (Roles role : users.getRoles()) {
+			role = roleRepository.findByRoleName(role.getRoleName());
 			roles.add(role);
 		}
 		users.setRoles(roles);
-		users=userRepository.save(users);
-		usersDTO=mapper.covertToDto(users);
+		users = userRepository.save(users);
+		usersDTO = mapper.covertToDto(users);
 		return usersDTO;
-		
+
 	}
+
+	
 
 }
