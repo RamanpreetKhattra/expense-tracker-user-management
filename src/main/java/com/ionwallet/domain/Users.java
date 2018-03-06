@@ -37,10 +37,6 @@ public class Users extends AbstractEntity{
 	@Column(name="LASTNAME")
 	private String lastName;
 	
-	@Column(name="DOB" , columnDefinition = "DATETIME")
-	@Convert(converter=LocalDateTimeAttributeConverter.class)
-	private LocalDateTime dob;
-	
 	@Column(name="EMAIL")
 	private String email;
 	
@@ -98,14 +94,6 @@ public class Users extends AbstractEntity{
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}
-
-	public LocalDateTime getDob() {
-		return dob;
-	}
-
-	public void setDob(LocalDateTime dob) {
-		this.dob = dob;
 	}
 
 	public String getEmail() {

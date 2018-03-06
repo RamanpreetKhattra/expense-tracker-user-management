@@ -16,7 +16,7 @@ public class LoginController {
 
 	@Autowired LoginService loginService;
 	
-	@RequestMapping(value="/authenticate",method=RequestMethod.POST)
+	@RequestMapping(value="/",method=RequestMethod.POST)
 	public LoginResponseDTO loginAuthentication(@RequestBody LoginDto loginDto){
 		return loginService.login(loginDto);
 		

@@ -29,9 +29,11 @@ public class UserServiceImpl implements UserService {
 	public UsersDTO save(UsersDTO usersDTO) {
 		Users users = mapper.convertToEntity(usersDTO);
 		List<Roles> roles = new ArrayList<Roles>();
-		for (Roles role : users.getRoles()) {
-			role = roleRepository.findByRoleName(role.getRoleName());
-			roles.add(role);
+		if (null!=roles) { 
+			for (Roles role : users.getRoles()) {
+				role = roleRepository.findByRoleName(role.getRoleName());
+				roles.add(role);
+			} 
 		}
 		users.setRoles(roles);
 		users = userRepository.save(users);
