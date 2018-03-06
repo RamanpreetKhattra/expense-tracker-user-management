@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ionwallet.expensemgrutility.common.dtos.LoginDto;
+import com.ionwallet.expensemgrutility.common.dtos.LoginResponseDTO;
 import com.ionwallet.service.LoginService;
 
 @RestController
@@ -16,14 +17,9 @@ public class LoginController {
 	@Autowired LoginService loginService;
 	
 	@RequestMapping(value="/authenticate",method=RequestMethod.POST)
-	public Boolean loginAuthentication(@RequestBody LoginDto loginDto){
+	public LoginResponseDTO loginAuthentication(@RequestBody LoginDto loginDto){
 		return loginService.login(loginDto);
 		
 	}
 	
-	@RequestMapping(value="/authorize",method=RequestMethod.POST)
-	public Boolean isAuthorizedUser(@RequestBody LoginDto lDto){
-		return null;
-		
-	}
 }

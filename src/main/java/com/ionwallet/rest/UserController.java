@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ionwallet.expensemgrutility.common.dtos.UsersDTO;
+import com.ionwallet.security.SecurityContextHolder;
 import com.ionwallet.service.UserService;
 
 @RestController
@@ -21,6 +22,9 @@ public class UserController {
 	
 	@RequestMapping(value="/save",method=RequestMethod.POST,produces=MediaType.APPLICATION_JSON_VALUE ,consumes=MediaType.APPLICATION_JSON_VALUE)
 	public UsersDTO saveUser(@RequestBody UsersDTO usersDTO){
+		System.out.println(SecurityContextHolder.claims.get());
+		
+		
 //		usersDTO.setDob(LocalDateTime.of(2000, 12, 12, 12, 12, 12));
 		return userService.save(usersDTO);
 	}
