@@ -3,6 +3,7 @@ package com.ionwallet.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +30,7 @@ public class UserServiceImpl implements UserService {
 	public UsersDTO save(UsersDTO usersDTO) {
 		Users users = mapper.convertToEntity(usersDTO);
 		List<Roles> roles = new ArrayList<Roles>();
-		if (null!=roles) { 
+		if (CollectionUtils.isNotEmpty(roles)) { 
 			for (Roles role : users.getRoles()) {
 				role = roleRepository.findByRoleName(role.getRoleName());
 				roles.add(role);
